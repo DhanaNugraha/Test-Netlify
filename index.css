@@ -1,0 +1,795 @@
+.itim-regular {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+* {
+    font-family: "Itim";
+}
+
+body {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    background-color: aliceblue;
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "footer";
+}
+
+header {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: end;
+    background: url(Assets/footer-background-no-bg.png);
+    background-blend-mode: overlay;
+    background-color: #ffc341;
+    background-size: contain;
+    grid-area: header;
+    border-bottom: 3px solid rgb(32, 30, 56);
+    overflow: hidden;
+}
+
+header img {
+    width: 24%;
+    transform: translate(-50%);
+}
+
+header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    z-index: 2;
+}
+
+header #pets-banner {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(5%,6%);
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+nav #nav-bar{
+    display: flex;
+    background-image: linear-gradient(to right,rgb(32, 30, 56), rgb(28, 16, 120));
+    color: white;
+    justify-items:center; 
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 90px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: 12% repeat(4, 12.5%) 13% repeat(2, 12.5%);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+    z-index: 1;
+    font-size: 18px;
+}
+
+#hamburger-button {
+    display: none;
+}
+
+#hamburger-button:checked ~ #nav-bar {
+    display: none;
+}
+
+#hamburger-button-image {
+    position: absolute;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(0, 70%);
+    height: 95px;
+    transition: height;
+    z-index: 10;
+}
+
+#hamburger-button-image:hover {
+    height: 110px;
+}
+
+nav .logo {
+    display: flex;
+    background-color: white;
+    height: 80%;
+    grid-column: 1/2;
+    grid-row: 1/3
+
+}
+
+nav #search-bar {
+    grid-column: 2/6;
+    width: 90%;
+}
+
+/* for interactive image, both the link and the figure needs to be configured together */
+nav .cart, #logo-cart {
+    grid-column: 6/7;
+    grid-row: 1/3;
+    width: 100px;
+    animation-name: wiggle;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#logo-cart:hover {
+    width: 120px;
+}
+
+
+nav #signup {
+    text-decoration: none;
+    color: white;
+    grid-column: 7/8;
+    grid-row: 1/3;
+    border: 1px solid white;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+nav #login {
+    display: flex;
+    justify-self: start;
+    text-decoration: none;
+    color: white;
+    grid-column: 8/9;
+    grid-row: 1/3;
+    border: 1px solid white;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+
+nav #nav-toys {
+    text-decoration: none;
+    color: white;
+    grid-column: 2/3;
+    border-bottom: 1px solid;
+}
+
+nav #nav-hygiene {
+    text-decoration: none;
+    color: white;
+    grid-column: 3/4;
+    border-bottom: 1px solid;
+}
+
+nav #nav-food {
+    text-decoration: none;
+    color: white;
+    grid-column: 4/5;
+    border-bottom: 1px solid;
+}
+
+nav #nav-costumes {
+    text-decoration: none;
+    color: white;
+    grid-column: 5/6;
+    border-bottom: 1px solid;
+}
+
+#nav-costumes:hover, #nav-food:hover, #nav-hygiene:hover, #nav-toys:hover, #login:hover, #signup:hover {
+    font-size: 21px;
+    text-shadow: 2px 2px 8px #ffc341;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 4vh;
+    padding-right: 4vh;
+    grid-area: main;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    background: url(Assets/main-bg-dog-no-bg.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 250px;
+    background-blend-mode: normal;
+
+}
+
+main h2 {
+    border-bottom: 1px solid black;
+    font-size: 28px;
+}
+
+main h2 picture img{
+    width: 50px;
+    animation-name: scroll-rotate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+ 
+@keyframes scroll-rotate{
+    0% {}
+    100% {transform: translate(85vw,0)rotate(5turn);}
+}
+
+section img {
+    width: 90%;
+    height: 60%;
+    object-fit: scale-down;
+}
+
+.item-category {
+    display: flex;
+    justify-content: space-evenly;
+    display: grid;
+    grid-template: 90%/ repeat(3, 360px);
+    /* rows/columns */
+    gap: 2vw;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border: 1px solid whitesmoke;
+    box-shadow: 3px 3px 8px rgb(185, 181, 181);
+    border-radius: 5px;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    z-index:0;
+}
+
+.item:hover{
+    transform: scale(1.1);
+    box-shadow: 12px 12px 14px rgb(185, 181, 181);
+}
+
+.pet-peek {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    height: 100%;
+    opacity: 0;
+    transition: transform, opacity, height;
+    transition-delay: 0, 3s;
+}
+
+.pet-peek:hover {
+    transform: translate(-50%, -53%);
+    opacity: 10;
+    height: 200%;
+}
+
+@keyframes slide {
+    0% {transform: translate(0, 0)}
+    50% {transform: translate(100%, 0)}
+    100% {transform: translate(0%, 0)}
+}
+
+@keyframes slide-half {
+    0% {transform: translate(0, 0)}
+    50% {transform: translate(50%, 0)}
+    100% {transform: translate(0%, 0)}
+}
+
+
+@keyframes wiggle {
+    0% {rotate: 8deg;}
+    50% {rotate: -8deg}
+    100% {rotate: 8deg;}
+}
+
+
+#carousel-container {
+    position: relative;
+    align-self: center;
+    width: 600px;
+    overflow: hidden;
+    /* border: 1px solid black; */
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+#brand-carousel {
+    position: relative;
+    translate: -75%;
+    width: 2400px;
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+    grid-template-rows: 1fr 1fr;
+    /* border: 1px solid black; */
+    background-color: white;
+    justify-items: center;
+    align-items: center;
+    animation: carousel;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#carousel-container:hover > #brand-carousel {
+    animation-play-state: paused;
+}
+
+.brand {
+   width: 80px;
+}
+
+#brand-1 {
+    grid-column: 5/6;
+    grid-row: 1/2;
+}
+
+#brand-2 {
+    grid-column: 6/7;
+    grid-row: 1/2;
+}
+
+#brand-3 {
+    grid-column: 5/7;
+    grid-row: 2/3;
+}
+
+#brand-4 {
+    grid-column: 6/8;
+    grid-row: 2/3;
+}
+
+#brand-5 {
+    grid-column: 7/8;
+    grid-row: 1/2;
+}
+
+#brand-6 {
+    grid-column: 4/5;
+    grid-row: 1/3;
+}
+
+#brand-7 {
+    grid-column: 8/9;
+    grid-row: 1/3;
+}
+
+#brand-4-repeat {
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+#brand-5-repeat {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#brand-7-repeat {
+    grid-column: 3/4;
+    grid-row: 1/3;
+}
+
+@keyframes carousel {
+    100% {transform: translate(62.5%,0)}
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(207, 207, 207);
+    grid-area: footer;
+    justify-content: space-between;
+    align-items: center;
+    background: url(Assets/pet-footer-no-bg.png), url(Assets/footer-background-no-bg.png);
+    background-repeat: no-repeat, repeat;
+    background-position: right, right;
+    background-size: 150px, contain;
+    background-blend-mode: normal, overlay;
+    background-color: rgb(32, 30, 56);
+    color: white;
+}
+
+#help {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#follow {
+    text-align: center;
+}
+
+
+
+/* Media section from extra large display to handheld display */
+
+
+/* Large devices (laptops/desktops, 1200px and down) */
+
+/* @media screen and (max-width: 1200px) {
+    body {
+        background-color : red;
+    }
+} */
+
+@media screen and (max-width: 1200px) {
+    .item-category {
+        grid-template: 90%/ repeat(3, 300px);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #carousel-container {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #brand-carousel {
+        width: 1600px;
+    }
+}
+
+
+
+
+/* Medium devices (landscape tablets, 992px and down) */
+/* @media screen and (max-width: 992px) {
+    body {
+        background-color : green;
+    }
+} */
+
+@media screen and (max-width: 992px) {
+    .item-category {
+        grid-template: 90%/ repeat(3, 220px);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    nav #nav-bar {
+        grid-template-columns: 20% repeat(4, 12.5%) repeat(2, 15%);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    nav .cart, #logo-cart {
+        grid-column: 6/7;
+        grid-row: 2/3;
+        width: 45px;
+        animation-name: slide;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    nav .cart:hover, #logo-cart:hover {
+        animation-play-state: paused;
+        width: 50px;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    nav #signup {
+        grid-column: 6/7;
+        grid-row: 1/2;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    nav #login {
+        grid-column: 7/8;
+        grid-row: 1/2;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #hamburger-button-image {
+        height: 70px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #hamburger-button-image:hover {
+        height: 90px;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    main h2 picture img{
+        width: 35px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #carousel-container {
+        width: 270px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #brand-carousel {
+        width: 1080px;
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 768px and down) */
+
+/* @media screen and (max-width: 768px) {
+    body {
+        background-color: orange;
+    }
+} */
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header img {
+        transform: translate(-40%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header #pets-banner {
+        transform: translate(10%, 7%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav .cart, #logo-cart {
+        animation-name: slide-half;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav .cart:hover, #logo-cart:hover {
+        width: 45px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #nav-costumes:hover, #nav-food:hover, #nav-hygiene:hover, #nav-toys:hover, #login:hover, #signup:hover {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #hamburger-button-image {
+        left: 0;
+        transform: translate(0, 80%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #hamburger-button-image:hover {
+        height: 85px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        background: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .item-category {
+        grid-template: repeat(3, 33%)/ 80%;
+        gap: 4vh;
+        margin-bottom: 8vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pet-peek {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .item:hover{
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        background: url(Assets/footer-background-no-bg.png);
+        background-repeat: repeat;
+        background-position: right;
+        background-size: contain;
+        background-blend-mode: overlay;
+        background-color: rgb(32, 30, 56);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #carousel-container {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #brand-carousel {
+        width: 1800px;
+    }
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+
+/* @media screen and (max-width: 600px) {
+    body {
+        background-color: chocolate;
+    }
+} */
+
+@media screen and (max-width: 600px) {
+    header{
+        display: block;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header h1 {
+        transform: translate(-50%, -70%);
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header img {
+        width: 150px;
+        transform: translate(-120%, 0);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header #pets-banner {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header #pets-banner {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav #nav-bar {
+        font-size: 12px;
+        grid-template-columns: repeat(4, 13%) repeat(2, 17%);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav .logo {
+        display: flex;
+        background-color: white;
+        height: 30px;
+        grid-column: 1/2;
+        grid-row: 1/2;
+    
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav #nav-toys {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav #nav-hygiene {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav #nav-food {
+        grid-column: 3/4;
+        grid-row: 2/3;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav #nav-costumes {
+        grid-column: 4/5;
+        grid-row: 2/3;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav .cart, #logo-cart {
+        grid-row: 1/2;
+        animation-name: wiggle;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav #signup {
+        grid-column: 5/6;
+        grid-row: 2/3;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav #login {
+        grid-column: 6/7;
+        grid-row: 2/3;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    footer form {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    footer textarea {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #carousel-container {
+        width: 220px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #brand-carousel {
+        width: 880px;
+    }
+}
+
+
+
+
+
+
+
+
