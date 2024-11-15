@@ -8,14 +8,14 @@ function nightMode() {
 
     localStorage.setItem("theme", "dark");
   } else if (localStorage.getItem("theme") === "dark") {
-    document.getElementById("body").style.backgroundColor = "white";
+    document.getElementById("body").style.backgroundColor = "aliceblue";
 
     document.getElementById("header").style.backgroundColor = "#ffc341";
 
     localStorage.setItem("theme", "light");
 
     // localStorage.removeItem('theme');
-    console.log("test");
+    // console.log("test");
   } else {
     document.getElementById("body").style.backgroundColor = "#201e38";
 
@@ -23,7 +23,7 @@ function nightMode() {
 
     localStorage.setItem("theme", "dark");
 
-    console.log("test else");
+    // console.log("test else");
 
     // localStorage.removeItem('theme');
   }
