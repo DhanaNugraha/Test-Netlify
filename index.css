@@ -207,7 +207,6 @@ main{
     background-position: left bottom;
     background-size: 250px;
     background-blend-mode: normal;
-
 }
 
 main h2 {
@@ -391,6 +390,11 @@ section img {
 
 @keyframes carousel {
     100% {transform: translate(62.5%,0)}
+}
+
+#night-mode-button {
+    width: 25%;
+    align-self: center;
 }
 
 footer {

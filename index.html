@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
-    <header>
+<body id="body">
+    <header id="header">
 
         <img src="Assets\banner_header-no-bg.png" alt="Banner" class="banner">
 
@@ -55,7 +55,11 @@
     </nav> 
 
 
-    <main>
+    <main id="main">
+        <button type="button" id="night-mode-button" onclick="nightMode()">
+            Night Mode
+        </button>
+
         <h2 class="toys-title">
             Pet Toys
             <picture>
@@ -188,6 +192,8 @@
             </div>
         </article>
 
+        
+
     </main> <br> <br>
 
 
@@ -224,5 +230,6 @@
 
     </footer>
     
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
