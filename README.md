@@ -1,14 +1,15 @@
 # Online Shop Website
-
 [Pet Store](https://dhananugraha.github.io/Revou-module-2-assignment/) is an online shop website that utilize html for its foundational structure. This website was made to display item listings of various products with different categoties to choose from.
 
-## Table of Contents
 
+## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Sections Overview](#sections-overview)
 - [Contributing](#contributing)
+- [Deployment](#deployment)
+
 
 ## Features
 - Responsive header section with the shop name and banner
@@ -16,12 +17,13 @@
 - Main shop section with interactive hover effects, animations, and image carousel.
 - Responsive footer section with short form and social media.
 
+
 ## Technologies Used
 - HTML5
 - CSS
 
-## Installation
 
+## Installation
 1. clone the repository:
     ```
     https://github.com/DhanaNugraha/Revou-module-2-assignment.git
@@ -38,6 +40,7 @@
     ```
     <img src="Assets\toy_3.jpg">
     ```
+
 
 ## Sections Overview
 ### 1. Header
@@ -59,6 +62,7 @@
 - The footer includes a short form for the user to fill in when they require help and/or assistance. This form will have some fields that are required to be filled in before the inquiry could be sent.
 - A follow section that have interactive social media figures 
 
+
 ## Contributing
 1. Fork the repository.
 2. Create a new branch: 
@@ -71,4 +75,25 @@
     git push origin feature-name
     ```
 5. Create a pull request.
+
+
+## Deployment
+### Custom Domain Using Niagahoster
+![Niagahoster](https://github.com/DhanaNugraha/Test-Netlify/blob/main/Assets/Niagahoster.png)
+- Create a Niagahoster account and login.
+- In the domain section, create a domain name that is still available for use.
+- Choose the domain extention that you want and purchase the domain.
+- Verify your purchase in your registered email.
+- The custom domain is ready to be used.
+
+### Deployment using Netlify
+![Netlify](https://github.com/DhanaNugraha/Test-Netlify/blob/main/Assets/Netlify.png)
+- Create a Netlify account and login
+- Connect the account to your Github account
+- In the domain management section, add the newly acquired custom domain.
+- In the option dropdown of the domain, pick set up netlify DNS.
+- Afterwards, Netlify will provide domain name servers.
+- Open Niagahoster and go to the domain settings.
+- In the DNS/Nameserver section, change the nameservers into the ones that are provided by netlify.
+- After a period of time, the DNS will be verified by Netlify and the website can now be opened using the custom domain.
 
